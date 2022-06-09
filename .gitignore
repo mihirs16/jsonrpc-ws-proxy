@@ -1,4 +1,12 @@
-.DS_Store
-node_modules
-dist
-.vscode
+# node
+**/node_modules/**
+**/package-lock.json
+
+# webpack/tsc builds
+**/dist/**
+
+# macos
+**/.DS_Store
+
+# vscode
+**/.vscode
