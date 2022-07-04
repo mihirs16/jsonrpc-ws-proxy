@@ -16,7 +16,7 @@ if (argv.help || !argv.languageServers) {
     process.exit(1);
 }
 
-let serverPort : number = parseInt(argv.port) || 3000;
+let serverPort : number = parseInt(process.env.PORT) || 3000;
 
 let languageServers;
 try {
