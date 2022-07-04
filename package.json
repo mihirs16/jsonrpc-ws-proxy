@@ -18,7 +18,7 @@
     "watch": "tsc -w",
     "clean": "rimraf dist",
     "build": "tsc",
-    "dev": "node dist/server.js --languageServers servers.yml"
+    "start": "node dist/server.js --languageServers servers.yml"
   },
   "dependencies": {
     "@sourcegraph/vscode-ws-jsonrpc": "0.0.3-fork",
