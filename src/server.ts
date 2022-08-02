@@ -55,11 +55,9 @@ function toSocket(webSocket: ws): rpc.IWebSocket {
 wss.on('connection', (client : ws, request : http.IncomingMessage) => {
     let langServer : string[];
 
-    Object.keys(languageServers).forEach((key) => {
-        if (request.url === '/' + key) {
-            langServer = languageServers[key];
-        }
-    });
+    if (request.url.includes('?lang=')) {
+        langServer = languageServers[request.url.split('?lang=')[1]];
+    }
     if (!langServer || !langServer.length) {
         console.error('Invalid language server', request.url);
         client.close();
@@ -72,7 +70,7 @@ wss.on('connection', (client : ws, request : http.IncomingMessage) => {
     rpcServer.forward(connection, localConnection);
     console.log(`Forwarding new client`);
     socket.onClose((code, reason) => {
-        console.log('Client closed', reason);
+        console.log('Client closed', code, reason);
         localConnection.dispose();
     });
 });
