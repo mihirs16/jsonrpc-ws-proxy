@@ -1,3 +1,5 @@
+# JSON-RPC WebSocket Proxy
+
 Sets up a websocket proxy for any number of language servers.
 
 Each server is run as a subprocess which is connected to by sending the client
@@ -17,7 +19,7 @@ langservers:
 
 The client would connect to `ws://localhost/python` to get a python language server
 
-Usage:
+## Usage:
 
 ```
 npm install
