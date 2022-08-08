@@ -2,6 +2,8 @@
 
 Sets up a websocket proxy for any number of language servers.
 
+## Getting Started 
+
 Each server is run as a subprocess which is connected to by sending the client
 to the URL /<language> based on a configuration file defined locally. For example,
 with the following defined as `servers.yml`:
